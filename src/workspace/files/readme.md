@@ -1,7 +1,7 @@
 # Angular Library Workspace
 
 ```bash
-ng new <%= dasherize(name) %> --createApplication=false --packageManager=yarn --skipTests=true -g -f
+ng new <%= dasherize(name) %> --createApplication=false --packageManager=npm --skipTests=true -g -f
 
 cd <%= dasherize(name) %>
 ```

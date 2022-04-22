@@ -13,7 +13,7 @@ schematics blank --name={name}
 ```bash
 cd {name}
 yarn install
-yarn build
+npm run build
 ```
 
 ## Run a Schematic

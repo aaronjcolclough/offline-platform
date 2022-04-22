@@ -52,7 +52,7 @@ If you want to create more than just the standard `development` and `production`
       buildConfiguration: 'Release'
 
     steps:
-      - script: yarn restore
+      - script: npm run restore
         displayName: 'Restore Server Dependencies'
 
       - script: dotnet run -- "Server=DEVSQL\AppSql;Database=app;Integrated Security=SSPI;Persist Security Info=true;User Id=gmsa-appsql$;"
@@ -73,13 +73,13 @@ If you want to create more than just the standard `development` and `production`
           pathToPublish: '$(Build.ArtifactStagingDirectory)/prod/server'
           artifactName: 'server'
 
-      - script: yarn install --offline
+      - script: npm install --offline
         displayName: 'Install Client Dependencies'
 
-      - script: yarn build:prod:core
+      - script: npm run build:prod:core
         display: 'Build core Library'
 
-      - script: yarn build:prod:playground
+      - script: npm run build:prod:playground
         displayName: 'Build Playground Release'
 
       - task: ArchiveFiles@2
